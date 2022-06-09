@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "target": "esnext", // 目标语言的版本
+    "module": "esnext", // 指定生成代码的模板标准
+    "moduleResolution": "node", // node模块解析
+    "strict": true, // 启用严格模式
+    "jsx": "preserve", // jsx模板解析
+    "noImplicitAny": true, // 不允许隐式的 any 类型
+    "removeComments": true, // 删除注释
+    "sourceMap": true, // 生成目标文件的sourceMap文件
+    "strictNullChecks": true, // 不允许把null、undefined赋值给其他类型的变量
+    "resolveJsonModule": true, // 允许导入.json文件
+    "esModuleInterop": true, // 允许导入额外的ts文件支持
+    "suppressImplicitAnyIndexErrors": true, // 允许字符串下标表达式
+    "types": [
+      "vite/client",
+      "node",
+      "element-plus/global"
+    ],
+    "lib": [
+      "esnext",
+      "dom"
+    ],
+    "baseUrl": ".", // 解析非相对模块的基地址，默认是当前目录, 防止引入文件报错
+    "paths": { // 路径映射，相对于baseUrl
+      "/@/*": [
+        "src/*"
+      ]
+    },
+    "skipLibCheck": true // 所有的声明文件（*.d.ts）的类型检查, 解决：打包不报错
+  },
+  // 指定一个匹配列表（属于自动指定该路径下的所有ts相关文件）
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue"
+  ]
+}
